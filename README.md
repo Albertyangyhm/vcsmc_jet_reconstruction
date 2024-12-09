@@ -15,9 +15,5 @@ To run, type the folowing in terminal:
    --twisting=[true/false]
    --num_epoch=100`   
 
-This runner.py file assumes that all datasets (`primate.p`, for example) are directly put under a folder called 'data'
-
-<img src="https://github.com/amoretti86/phylo/blob/master/data/figures/primatesTVCSMC_5.png"
-     alt="VCSMC Figure"
-     style="float: left; margin-right: 10px;" />
+This runner.py file assumes that all datasets (`ginkgo.p`, for example) are directly put under a folder called 'data'
      
