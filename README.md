@@ -1,1 +1,1 @@
-# vcsmc_jet_reconstruction
+# Variational Combinatorial Sequential Monte Carlo for Jet Reconstruction in Particle Physics
