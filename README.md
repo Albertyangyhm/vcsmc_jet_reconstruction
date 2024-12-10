@@ -14,6 +14,7 @@ If you use this repository, please cite the paper:
   year={2024},
   url={https://openreview.net/forum?id=pCapRF2vFf}
 }
+```
 
 ## Usage
 To run, type the folowing in terminal: 
