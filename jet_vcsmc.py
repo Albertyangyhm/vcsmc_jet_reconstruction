@@ -452,7 +452,7 @@ class VCSMC:
         self.jump_chains = tf.constant('', shape=(K, 1))
         self.jump_chain_tensor = tf.constant([self.sample_names] * K, name='JumpChainK')
         v_minus = tf.constant(1, shape=(K, ), dtype=tf.int32)  # to be used in overcounting_correct
-        self.core_with_llh = self.precompute_llh(self.core, self.t_cut)
+        self.core_with_llh = self.core
         
         llh_sum = tf.constant(0, shape=(1, K), dtype=tf.float64)
 
@@ -498,33 +498,6 @@ class VCSMC:
     
     def test_prior(self, lam_Kx1, tp_Kx1):
         return tf.log(lam_Kx1) -lam_Kx1 * tp_Kx1
-    
-    def precompute_llh(self, data, t_cut):
-#         data = tf.reshape(data, (-1,1, 4)) # data is KxNx1x4
-        
-
-#         def get_leaf_llh():
-#             e = tf.constant(np.e, dtype=tf.float32)
-#             ones_tensor = tf.ones(shape=(self.K*self.N, 1))
-#             return tf.cast(-4000 * ones_tensor, dtype=tf.float64)
-
-#         llh_KNx1 = get_leaf_llh()
-
-#         results_KNx1_copied = tf.tile(
-#             tf.reshape(
-#                 tf.squeeze(llh_KNx1), (-1, 1)
-#             ), 
-#             (1, 4)
-#         )
-
-#         like_stacked_vec4_Kx2x4 = tf.stack(
-#                 [
-#                     results_KNx1_copied,
-#                     tf.squeeze(data)
-#                 ],
-#                 axis=1
-#         )
-        return data
 
     def train(self, epochs=100, batch_size=128, learning_rate=0.001, memory_optimization='on'):
         """
